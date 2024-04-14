@@ -1,12 +1,18 @@
-﻿<Window x:Class="WpfApp77.MainWindow"
+﻿<Window x:Class="RandomNumbersToFile.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp77"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Random Numbers to File" Height="250" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <Button Content="Generate and Save Numbers" Click="GenerateAndSaveNumbers_Click" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,5" Padding="10,5" Background="#007ACC" Foreground="White" BorderThickness="0" FontWeight="Bold"/>
+
+        <TextBlock x:Name="StatisticsTextBlock" Grid.Row="1" Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="0,10,0,0" FontWeight="Bold"/>
     </Grid>
 </Window>
