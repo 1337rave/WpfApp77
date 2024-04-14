@@ -1,12 +1,21 @@
-﻿<Window x:Class="WpfApp77.MainWindow"
+﻿<Window x:Class="ArrayToFile.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp77"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Array to File" Height="250" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock Text="Enter Array Elements (comma separated):" Grid.Row="0" Margin="0,0,5,5" FontWeight="Bold"/>
+        <TextBox x:Name="ArrayElementsTextBox" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5" Width="200" Height="30" VerticalContentAlignment="Center" Padding="5" BorderThickness="1" BorderBrush="DarkGray"/>
+
+        <Button Content="Save Array to File" Click="SaveArrayToFile_Click" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,5" Padding="10,5" Background="#007ACC" Foreground="White" BorderThickness="0" FontWeight="Bold"/>
+
+        <TextBlock x:Name="OutputTextBlock" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap" Margin="0,10,0,0" FontWeight="Bold"/>
     </Grid>
 </Window>
