@@ -1,24 +1,36 @@
-﻿using System.Text;
+﻿using System;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace WpfApp77
+namespace FileViewer
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ViewFile_Click(object sender, RoutedEventArgs e)
+        {
+            string filePath = FilePathTextBox.Text;
+
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    string fileContent = File.ReadAllText(filePath);
+                    FileContentTextBlock.Text = fileContent;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while reading the file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("The specified file does not exist.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
